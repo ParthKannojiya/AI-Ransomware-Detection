@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Build the project using Maven
-RUN ./mvnw clean package -DskipTests
+RUN chmod +x mvnw && ./mvnw clean package -DskipTests
 
 # Run the JAR file
 CMD ["java", "-jar", "target/ai-ransomware-backend.jar"]
